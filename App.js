@@ -1,16 +1,10 @@
-import { StyleSheet, View } from 'react-native';
+import {  View } from 'react-native';
 import Weather from './src';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View style={{flex: 1}}>
       <Weather />      
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});

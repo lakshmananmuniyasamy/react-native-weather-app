@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert, ActivityIndicator } from 'react-native'
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Constants from 'expo-constants'
 import WeatherInfo from './WeatherInfo'
@@ -17,11 +17,12 @@ const Weather = () => {
                 setWeatherData(data)
             } else {
                 setWeatherData(null)
-                Alert.alert("Error", "City not found")
+                alert("City not found")
+                fetchWeatherData("Madurai")
             }
         } catch (error) {
             console.error("Error fetching weather data:", error)
-            Alert.alert("Error", "Failed to fetch weather data")
+            alert( "Failed to fetch weather data")
         } finally {
             setLoading(false)
         }
@@ -67,4 +68,6 @@ const styles = StyleSheet.create({
         fontSize: 29,
         fontWeight: 'bold'
     }
-});
+})
+
+
